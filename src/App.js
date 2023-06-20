@@ -1,46 +1,21 @@
 import logo from './logo.svg';
 import './App.css';
+import Post from './Post';
+import Header from './Header';
+import { Route, Routes} from 'react-router-dom';
+import Layout from './Layout';
+import IndexPage from './Pages/IndexPage';
+import LoginPage from './Pages/LoginPage';
 
 function App() {
   return (
-    <main>
-      <header>
-        <a href="" className="logo">MyBlog l</a>
-        <nav>
-          <a href="">Login</a>
-          <a href="">Register</a>
-        </nav>
-      </header>
-      <div className='post'>
-        <div className="image">
-          <img src="https://neilpatel.com/wp-content/uploads/2023/02/Tips-for-Writing-a-Blog-Post-in-Under-60-Minutes.jpg" alt="guygugu"></img>
-        </div>
-        <div className="texts">
-          <h2>Type cd \ into the prompt to go back to the directory.</h2>
-          <p>If you need to navigate from a location back to the main command prompt, this command takes you back immediately.</p>
-        </div>
-      </div>
-
-      <div className='post'>
-      <div className="image">
-          <img src="https://neilpatel.com/wp-content/uploads/2023/02/Tips-for-Writing-a-Blog-Post-in-Under-60-Minutes.jpg" alt="guygugu"></img>
-        </div>
-        <div className="texts">
-          <h2>Type cd \ into the prompt to go back to the directory.</h2>
-          <p>If you need to navigate from a location back to the main command prompt, this command takes you back immediately.</p>
-        </div>
-      </div>
-
-      <div className='post'>
-      <div className="image">
-          <img src="https://neilpatel.com/wp-content/uploads/2023/02/Tips-for-Writing-a-Blog-Post-in-Under-60-Minutes.jpg" alt="guygugu"></img>
-        </div>
-        <div className="texts">
-          <h2>Type cd \ into the prompt to go back to the directory.</h2>
-          <p>If you need to navigate from a location back to the main command prompt, this command takes you back immediately.</p>
-        </div>
-      </div>
-    </main>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<IndexPage />} />
+        <Route path={'/login'} element={<LoginPage />} />
+      </Route>      
+    </Routes>
+    
   );
 }
 
